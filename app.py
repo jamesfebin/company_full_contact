@@ -56,7 +56,7 @@ def read_csv_input():
 			   if domain != '':
 			   		r = fetch_from_full_contact(domain)
 			   		if r and r['status'] == 200:
-			   			append_to_file("found.csv",[[domain,str(r)]])
+			   			append_to_file("found.csv",[[domain,json.dumps(r)]])
 			   		else:
 			   			append_to_file("not_found.csv",[[domain]])
 		print ' Task Completed'
